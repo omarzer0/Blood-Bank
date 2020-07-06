@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.azapps.bloodbankipda3.R;
-import com.azapps.bloodbankipda3.view.activity.MainActivity;
+import com.azapps.bloodbankipda3.view.activity.slider.SliderActivity;
 
 public class SplashActivity extends AppCompatActivity {
     public static final int SPLASH_DELAYED_LENGTH = 1000 ;
@@ -20,7 +20,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                startActivity(new Intent(SplashActivity.this, SliderActivity.class));
                 finish();
             }
         },SPLASH_DELAYED_LENGTH );

@@ -1,5 +1,7 @@
 package com.azapps.bloodbankipda3.view.fragment;
 
+import android.widget.Toast;
+
 import androidx.fragment.app.Fragment;
 
 import com.azapps.bloodbankipda3.view.activity.BaseActivity;
@@ -12,6 +14,7 @@ public class BaseFragment extends Fragment {
     }
 
     public void onBackFragment(){
-
+        baseActivity.onBackPressed();
     }
+
 }

@@ -15,6 +15,6 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         // your custom action from the fragment
-        baseFragment.onBackFragment();
+        finishAffinity();
     }
 }
