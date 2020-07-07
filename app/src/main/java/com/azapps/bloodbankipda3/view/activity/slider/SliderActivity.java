@@ -1,9 +1,8 @@
 package com.azapps.bloodbankipda3.view.activity.slider;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-
 import android.os.Bundle;
+
+import androidx.viewpager.widget.ViewPager;
 
 import com.azapps.bloodbankipda3.R;
 import com.azapps.bloodbankipda3.adapter.slider.SliderViewPagerAdapter;

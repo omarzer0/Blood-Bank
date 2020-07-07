@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+
 import com.azapps.bloodbankipda3.view.fragment.slider.SliderFragment;
 
 public class SliderViewPagerAdapter extends FragmentPagerAdapter {
@@ -20,7 +21,7 @@ public class SliderViewPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         SliderFragment sliderFragment = new SliderFragment();
         Bundle bundle = new Bundle();
-        bundle.putInt("position",position);
+        bundle.putInt("position", position);
         sliderFragment.setArguments(bundle);
         return sliderFragment;
     }

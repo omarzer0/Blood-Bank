@@ -33,6 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="25dp"
+            android:textColor="#aa1E1E"
             tools:text="@tools:sample/lorem/random" />
 
     </androidx.core.widget.NestedScrollView>
@@ -53,6 +54,6 @@
         android:text="Skip"
         android:textColor="#ff0000"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
