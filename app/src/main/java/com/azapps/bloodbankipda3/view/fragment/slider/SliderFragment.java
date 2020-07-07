@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.azapps.bloodbankipda3.R;
-import com.azapps.bloodbankipda3.view.activity.MainActivity;
+import com.azapps.bloodbankipda3.view.activity.userAuth.LoginActivity;
 import com.azapps.bloodbankipda3.view.fragment.BaseFragment;
 
 public class SliderFragment extends BaseFragment {
@@ -31,7 +31,7 @@ public class SliderFragment extends BaseFragment {
         skipButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), MainActivity.class));
+                startActivity(new Intent(getActivity(), LoginActivity.class));
 //                getActivity().finish();
             }
         });
