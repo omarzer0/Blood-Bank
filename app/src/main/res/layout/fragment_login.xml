@@ -14,21 +14,23 @@
         tools:context=".view.activity.userAuth.LoginActivity">
 
         <ImageView
-            android:id="@+id/activity_login_img_white_blood_logo_image"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:id="@+id/fragment_login_img_white_blood_logo_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:src="@drawable/user_auth_white_blood_icon"
-            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_login_guide_line"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
 
 
         <EditText
-            android:id="@+id/activity_login_ed_edit_text_login_email"
+            android:id="@+id/fragment_login_ed_edit_text_login_email"
+            style="@style/text_theme_for_red_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/edit_text_shape"
             android:hint="example@example.com"
@@ -36,10 +38,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+            app:layout_constraintTop_toTopOf="@+id/fragment_login_guide_line" />
 
         <EditText
-            android:id="@+id/activity_login_ed_edit_text_login_password"
+            android:id="@+id/fragment_login_ed_edit_text_login_password"
+            style="@style/text_theme_for_red_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -50,46 +53,47 @@
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_login_ed_edit_text_login_email" />
+            app:layout_constraintTop_toBottomOf="@+id/fragment_login_ed_edit_text_login_email" />
 
 
         <CheckBox
-            android:id="@+id/activity_login_chb_check_box_remember_me"
+            android:id="@+id/fragment_login_chb_check_box_remember_me"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:buttonTint="@android:color/white"
             android:text="Remember me"
             android:textColor="@android:color/white"
-            app:layout_constraintStart_toStartOf="@+id/activity_login_ed_edit_text_login_password"
-            app:layout_constraintTop_toBottomOf="@+id/activity_login_ed_edit_text_login_password" />
+            app:layout_constraintStart_toStartOf="@+id/fragment_login_ed_edit_text_login_password"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_login_ed_edit_text_login_password" />
 
 
         <TextView
-            android:id="@+id/activity_login_tv_text_view_forget_password"
+            android:id="@+id/fragment_login_tv_text_view_forget_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="forget password?"
             android:textColor="@android:color/white"
-            app:layout_constraintBottom_toBottomOf="@+id/activity_login_chb_check_box_remember_me"
-            app:layout_constraintEnd_toEndOf="@+id/activity_login_ed_edit_text_login_password"
-            app:layout_constraintTop_toTopOf="@+id/activity_login_chb_check_box_remember_me" />
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_login_chb_check_box_remember_me"
+            app:layout_constraintEnd_toEndOf="@+id/fragment_login_ed_edit_text_login_password"
+            app:layout_constraintTop_toTopOf="@+id/fragment_login_chb_check_box_remember_me" />
 
 
         <Button
-            android:id="@+id/activity_login_btn_login_button"
+            android:id="@+id/fragment_login_btn_login_button"
+            style="@style/button_theme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:background="@drawable/button_shape"
             android:text="Login"
             android:textAllCaps="false"
-            app:layout_constraintEnd_toEndOf="@+id/activity_login_tv_text_view_forget_password"
-            app:layout_constraintStart_toStartOf="@+id/activity_login_chb_check_box_remember_me"
-            app:layout_constraintTop_toBottomOf="@+id/activity_login_chb_check_box_remember_me" />
+            app:layout_constraintEnd_toEndOf="@+id/fragment_login_tv_text_view_forget_password"
+            app:layout_constraintStart_toStartOf="@+id/fragment_login_chb_check_box_remember_me"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_login_chb_check_box_remember_me" />
 
 
         <TextView
-            android:id="@+id/activity_login_tv_text_view_sign_up"
+            android:id="@+id/fragment_login_tv_text_view_sign_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -99,11 +103,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_login_btn_login_button"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_login_btn_login_button"
             app:layout_constraintVertical_bias="1.0" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
+            android:id="@+id/fragment_login_guide_line"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"

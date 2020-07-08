@@ -42,9 +42,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
 
     private void initViews(View view) {
-        forgetPassword = view.findViewById(R.id.activity_login_tv_text_view_forget_password);
-        signUp = view.findViewById(R.id.activity_login_tv_text_view_sign_up);
-        login = view.findViewById(R.id.activity_login_btn_login_button);
+        forgetPassword = view.findViewById(R.id.fragment_login_tv_text_view_forget_password);
+        signUp = view.findViewById(R.id.fragment_login_tv_text_view_sign_up);
+        login = view.findViewById(R.id.fragment_login_btn_login_button);
     }
 
     public static LoginFragment newInstance() {
@@ -54,13 +54,13 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.activity_login_tv_text_view_forget_password:
+            case R.id.fragment_login_tv_text_view_forget_password:
                 Utils.replaceFragments(ForgetPasswordFragment.newInstance(), getFragmentManager());
                 break;
-            case R.id.activity_login_btn_login_button:
+            case R.id.fragment_login_btn_login_button:
                 startActivity(new Intent(getActivity(), HomeActivity.class));
                 break;
-            case R.id.activity_login_tv_text_view_sign_up:
+            case R.id.fragment_login_tv_text_view_sign_up:
                 Utils.replaceFragments(SignUpFragment.newInstance(), getFragmentManager());
                 break;
         }
