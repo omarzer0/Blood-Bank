@@ -2,14 +2,14 @@ package com.azapps.bloodbankipda3.view.activity.slider;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.azapps.bloodbankipda3.R;
 import com.azapps.bloodbankipda3.adapter.slider.SliderViewPagerAdapter;
-import com.azapps.bloodbankipda3.view.activity.BaseActivity;
 import com.google.android.material.tabs.TabLayout;
 
-public class SliderActivity extends BaseActivity {
+public class SliderActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

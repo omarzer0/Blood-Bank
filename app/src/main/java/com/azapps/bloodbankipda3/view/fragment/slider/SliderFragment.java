@@ -10,12 +10,12 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.azapps.bloodbankipda3.R;
 import com.azapps.bloodbankipda3.view.activity.userAuth.LoginActivity;
-import com.azapps.bloodbankipda3.view.fragment.BaseFragment;
 
-public class SliderFragment extends BaseFragment {
+public class SliderFragment extends Fragment {
 
     private String[] stringArrayList = new String[]{"hi", "omar"};
     private Integer[] idArrayList = new Integer[]{R.drawable.slide_one_image, R.drawable.slide_two_image};
@@ -46,10 +46,5 @@ public class SliderFragment extends BaseFragment {
         sliderText.setText(stringArrayList[position]);
         sliderImage.setImageResource(idArrayList[position]);
         return view;
-    }
-
-    @Override
-    public void onBackFragment() {
-
     }
 }
