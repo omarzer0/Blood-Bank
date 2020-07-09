@@ -32,7 +32,6 @@ public class SliderFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), LoginActivity.class));
-//                getActivity().finish();
             }
         });
 

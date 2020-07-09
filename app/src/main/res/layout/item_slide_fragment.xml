@@ -30,7 +30,7 @@
 
         <TextView
             android:id="@+id/item_slide_tv_text"
-            style="@style/text_theme_for_red_text"
+            style="@style/TextThemeForRedText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="25dp"
