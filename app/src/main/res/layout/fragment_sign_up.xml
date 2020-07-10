@@ -30,7 +30,7 @@
 
         <EditText
             android:id="@+id/fragment_sign_up_ed_edit_text_name"
-            style="@style/TextThemeForRedText"
+            style="@style/TextThemeForBlackText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -49,7 +49,7 @@
 
         <EditText
             android:id="@+id/fragment_sign_up_ed_edit_text_email"
-            style="@style/TextThemeForRedText"
+            style="@style/TextThemeForBlackText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -66,7 +66,7 @@
 
         <TextView
             android:id="@+id/fragment_sign_up_tv_text_view_date_of_birth"
-            style="@style/TextThemeForRedText"
+            style="@style/TextThemeForBlackText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -83,7 +83,7 @@
 
         <TextView
             android:id="@+id/fragment_sign_up_tv_text_view_blood_type_choice"
-            style="@style/TextThemeForRedText"
+            style="@style/TextThemeForBlackText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -100,7 +100,7 @@
 
         <TextView
             android:id="@+id/fragment_sign_up_tv_text_view_last_blood_donation"
-            style="@style/TextThemeForRedText"
+            style="@style/TextThemeForBlackText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -117,7 +117,7 @@
 
         <TextView
             android:id="@+id/fragment_sign_up_tv_text_view_state_location"
-            style="@style/TextThemeForRedText"
+            style="@style/TextThemeForBlackText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_shape"
@@ -135,7 +135,7 @@
 
         <TextView
             android:id="@+id/fragment_sign_up_tv_text_view_city_location"
-            style="@style/TextThemeForRedText"
+            style="@style/TextThemeForBlackText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_shape"
@@ -152,7 +152,7 @@
 
         <EditText
             android:id="@+id/fragment_sign_up_ed_edit_text_phone"
-            style="@style/TextThemeForRedText"
+            style="@style/TextThemeForBlackText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_shape"
@@ -170,7 +170,7 @@
 
         <EditText
             android:id="@+id/fragment_sign_up_ed_edit_text_password"
-            style="@style/TextThemeForRedText"
+            style="@style/TextThemeForBlackText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_shape"
@@ -187,7 +187,7 @@
 
         <EditText
             android:id="@+id/fragment_sign_up_ed_edit_test_confirm_password"
-            style="@style/TextThemeForRedText"
+            style="@style/TextThemeForBlackText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_shape"

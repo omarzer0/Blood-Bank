@@ -27,21 +27,8 @@ public class SliderFragment extends Fragment {
         View view = inflater.inflate(R.layout.item_slide_fragment, container, false);
         TextView sliderText = view.findViewById(R.id.item_slide_tv_text);
         ImageView sliderImage = view.findViewById(R.id.item_slide_img_image);
-        TextView skipButton = view.findViewById(R.id.item_slide_tv_skip);
-        skipButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), LoginActivity.class));
-            }
-        });
-
 
         int position = getArguments().getInt("position");
-        if (position == 0) {
-            skipButton.setVisibility(View.INVISIBLE);
-        } else {
-            skipButton.setVisibility(View.VISIBLE);
-        }
         sliderText.setText(stringArrayList[position]);
         sliderImage.setImageResource(idArrayList[position]);
         return view;

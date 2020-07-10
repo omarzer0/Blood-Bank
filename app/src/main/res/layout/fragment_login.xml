@@ -26,7 +26,7 @@
 
         <EditText
             android:id="@+id/fragment_login_ed_edit_text_login_email"
-            style="@style/TextThemeForRedText"
+            style="@style/TextThemeForBlackText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -42,7 +42,7 @@
 
         <EditText
             android:id="@+id/fragment_login_ed_edit_text_login_password"
-            style="@style/TextThemeForRedText"
+            style="@style/TextThemeForBlackText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
