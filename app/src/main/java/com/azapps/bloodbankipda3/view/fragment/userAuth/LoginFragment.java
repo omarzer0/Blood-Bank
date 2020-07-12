@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -14,8 +15,9 @@ import androidx.fragment.app.Fragment;
 import com.azapps.bloodbankipda3.R;
 import com.azapps.bloodbankipda3.helper.Utils;
 import com.azapps.bloodbankipda3.view.activity.home.HomeActivity;
+import com.azapps.bloodbankipda3.view.activity.userAuth.LoginActivity;
 
-public class LoginFragment extends Fragment implements View.OnClickListener {
+public class LoginFragment extends Fragment implements View.OnClickListener, LoginActivity.OnBackPressedListener {
     private TextView forgetPassword, signUp;
     private Button login;
 
@@ -66,4 +68,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    @Override
+    public boolean onBackPressed() {
+        return true;
+    }
 }

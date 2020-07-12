@@ -3,13 +3,13 @@ package com.azapps.bloodbankipda3.view.activity.userAuth;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.azapps.bloodbankipda3.R;
 import com.azapps.bloodbankipda3.helper.Utils;
 import com.azapps.bloodbankipda3.view.fragment.userAuth.LoginFragment;
 
 public class LoginActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,5 +17,18 @@ public class LoginActivity extends AppCompatActivity {
         Utils.replaceFragments(LoginFragment.newInstance(), getSupportFragmentManager());
     }
 
+    @Override
+    public void onBackPressed() {
+        // return true to exit the app .......... true to remove the previous fragment
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.activity_login_frame_layout);
+        if(!(fragment instanceof  OnBackPressedListener)|| !((OnBackPressedListener)fragment).onBackPressed()){
+            super.onBackPressed();
+        }else {
+            finishAffinity();
+        }
+    }
 
+    public interface OnBackPressedListener{
+        boolean onBackPressed();
+    }
 }
