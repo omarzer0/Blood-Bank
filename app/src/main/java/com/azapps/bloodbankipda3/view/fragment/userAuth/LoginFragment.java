@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -20,6 +19,7 @@ import com.azapps.bloodbankipda3.view.activity.userAuth.LoginActivity;
 public class LoginFragment extends Fragment implements View.OnClickListener, LoginActivity.OnBackPressedListener {
     private TextView forgetPassword, signUp;
     private Button login;
+    private int container = R.id.activity_login_frame_layout;
 
     public LoginFragment() {
 
@@ -57,13 +57,13 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Log
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fragment_login_tv_text_view_forget_password:
-                Utils.replaceFragments(ForgetPasswordFragment.newInstance(), getFragmentManager());
+                Utils.replaceFragments(ForgetPasswordFragment.newInstance(), getFragmentManager(),container);
                 break;
             case R.id.fragment_login_btn_login_button:
                 startActivity(new Intent(getActivity(), HomeActivity.class));
                 break;
             case R.id.fragment_login_tv_text_view_sign_up:
-                Utils.replaceFragments(SignUpFragment.newInstance(), getFragmentManager());
+                Utils.replaceFragments(SignUpFragment.newInstance(), getFragmentManager(),container);
                 break;
         }
     }

@@ -41,7 +41,7 @@ public class ForgetPasswordFragment extends Fragment implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.fragment_forget_password_btn_send_verification_code_button:
-                Utils.replaceFragments(ConfirmForgetPasswordFragment.newInstance(),getFragmentManager());
+                Utils.replaceFragments(ConfirmForgetPasswordFragment.newInstance(),getFragmentManager(),R.id.activity_login_frame_layout);
                 break;
         }
     }

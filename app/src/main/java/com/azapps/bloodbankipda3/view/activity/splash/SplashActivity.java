@@ -10,7 +10,7 @@ import com.azapps.bloodbankipda3.R;
 import com.azapps.bloodbankipda3.view.activity.slider.SliderActivity;
 
 public class SplashActivity extends AppCompatActivity {
-    public static final int SPLASH_DELAYED_LENGTH = 1000 ;
+    public static final int SPLASH_DELAYED_LENGTH = 500 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

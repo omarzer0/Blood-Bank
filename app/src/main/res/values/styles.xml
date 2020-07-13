@@ -30,4 +30,8 @@
         <item name="colorAccent">#0000ff</item>
     </style>
 
+    <style name="HomeTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">#ffffff</item>
+    </style>
+
 </resources>

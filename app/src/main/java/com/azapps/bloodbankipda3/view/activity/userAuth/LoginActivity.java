@@ -10,11 +10,12 @@ import com.azapps.bloodbankipda3.helper.Utils;
 import com.azapps.bloodbankipda3.view.fragment.userAuth.LoginFragment;
 
 public class LoginActivity extends AppCompatActivity {
+    private int container = R.id.activity_login_frame_layout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Utils.replaceFragments(LoginFragment.newInstance(), getSupportFragmentManager());
+        Utils.replaceFragments(LoginFragment.newInstance(), getSupportFragmentManager(),container);
     }
 
     @Override
