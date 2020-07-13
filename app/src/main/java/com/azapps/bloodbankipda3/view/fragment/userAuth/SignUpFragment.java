@@ -9,29 +9,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.azapps.bloodbankipda3.R;
+import com.azapps.bloodbankipda3.data.CalenderSaver;
+import com.azapps.bloodbankipda3.helper.Utils;
 
 import java.util.Calendar;
+
+import static com.azapps.bloodbankipda3.helper.Constant.bloodTypeList;
 
 public class SignUpFragment extends Fragment implements View.OnClickListener {
     // ui
     private TextView dateOfBirthTV, bloodTypeTV, lastDonationDateTV;
-    private DatePickerDialog.OnDateSetListener onDateSetListener;
     // vars
-    private String dateOfDateBirthShownOnTV = null;
-    private String dateOfLastDonationShownOnTV = null;
+    private CalenderSaver calenderSaverForDateOfBirth = null;
+    private CalenderSaver calenderSaverForLastDonation = null;
 
-    private int yearOfText, monthOfText, dayOfText;
     private int bloodTypeCheckedItem = -1;
     private String bloodTypeChoice;
-    // arr
-    private int[] dateOfBirthDateArray = new int[3];
-    private int[] lastDonationDateArray = new int[3];
-    private final String[] bloodTypeList = new String[]{"A+", "O+", "B+", "AB+", "A-", "O-", "B-", "AB-"};
 
     public SignUpFragment() {
     }
@@ -63,22 +62,22 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fragment_sign_up_tv_text_view_date_of_birth:
-                dateOfDateBirthShownOnTV = datePickerInit(dateOfBirthDateArray,dateOfDateBirthShownOnTV,dateOfBirthTV);
+                calenderSaverForDateOfBirth = Utils.showCalender(calenderSaverForDateOfBirth,dateOfBirthTV,getActivity());
                 break;
 
             case R.id.fragment_sign_up_tv_text_view_blood_type_choice:
-                bloodTypeAlertDialog();
+                bloodTypeAlertDialog("Choose your blood type");
                 break;
 
             case R.id.fragment_sign_up_tv_text_view_last_blood_donation:
-                dateOfLastDonationShownOnTV = datePickerInit(lastDonationDateArray,dateOfDateBirthShownOnTV,lastDonationDateTV);
+                calenderSaverForLastDonation = Utils.showCalender(calenderSaverForLastDonation,lastDonationDateTV,getActivity());
                 break;
         }
     }
 
-    private void bloodTypeAlertDialog() {
+    private void bloodTypeAlertDialog(String title) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),R.style.MyAlertDialogStyle);
-        builder.setTitle("Choose your blood type");
+        builder.setTitle(title);
         builder.setSingleChoiceItems(bloodTypeList, bloodTypeCheckedItem, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -89,32 +88,6 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
             }
         });
         builder.create().show();
-    }
-
-    private String datePickerInit(final int[] array, final String date, final TextView showDateTV) {
-        final String[] s = {null};
-        Calendar calendar = Calendar.getInstance();
-        if (date == null) {
-            array[0] = calendar.get(Calendar.YEAR);
-            array[1] = calendar.get(Calendar.MONTH);
-            array[2] = calendar.get(Calendar.DAY_OF_MONTH);
-        }
-        DatePickerDialog dialog = new DatePickerDialog(getActivity(),
-                R.style.MyDatePickerStyle,
-                new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        array[0] = year;
-                        array[1] = month;
-                        array[2] = dayOfMonth;
-
-                        s[0] = (month + 1) + "/" + dayOfMonth + "/" + year;
-                        showDateTV.setText(s[0]);
-                    }
-                },
-                array[0], array[1], array[2]);
-        dialog.show();
-        return dateOfDateBirthShownOnTV = s[0];
     }
 
 }
