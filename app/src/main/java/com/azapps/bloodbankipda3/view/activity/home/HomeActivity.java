@@ -5,6 +5,7 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.azapps.bloodbankipda3.R;
 import com.azapps.bloodbankipda3.helper.Utils;
@@ -27,23 +28,25 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment fragment = null;
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        Utils.replaceFragmentsWithoutBackStack(new HomeFragment(), getSupportFragmentManager(), container);
+                        fragment = HomeFragment.newInstance();
                         break;
 
                     case R.id.nav_profile:
-                        Utils.replaceFragmentsWithoutBackStack(new ProfileFragment(),getSupportFragmentManager(),container);
+                        fragment = ProfileFragment.newInstance();
                         break;
 
                     case R.id.nav_notification:
-                        Utils.replaceFragmentsWithoutBackStack(new NotificationFragment(),getSupportFragmentManager(),container);
+                        fragment = NotificationFragment.newInstance();
                         break;
 
                     case R.id.nav_more:
-                        Utils.replaceFragmentsWithoutBackStack(new MoreFragment(),getSupportFragmentManager(),container);
+                        fragment = MoreFragment.newInstance();
                         break;
                 }
+                Utils.replaceFragmentsWithoutBackStack(fragment,getSupportFragmentManager(),container);
                 // true means yes i want it to be selected
                 return true;
             }

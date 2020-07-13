@@ -14,7 +14,7 @@ import com.azapps.bloodbankipda3.view.fragment.home.homeNavigationTabLayout.Dona
 
 public class HomeTabsViewPagerAdapter extends FragmentPagerAdapter {
 
-    private static final int[] TAB_TITLES = new int[]{R.string.articales_tab,R.string.donation_requests};
+    private static final int[] TAB_TITLES = new int[]{R.string.articles_tab,R.string.donation_requests};
     private Context context;
 
     public HomeTabsViewPagerAdapter(@NonNull FragmentManager fm, int behavior, Context context) {
