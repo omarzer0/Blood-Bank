@@ -36,4 +36,11 @@
         <item name="tabIndicatorColor">#ffffff</item>
     </style>
 
+    <style name="HideViews">
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="ShowViews">
+        <item name="android:visibility">visible</item>
+    </style>
 </resources>

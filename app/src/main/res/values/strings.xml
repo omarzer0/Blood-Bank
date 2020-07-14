@@ -2,4 +2,5 @@
     <string name="app_name">Blood Bank ipda3</string>
     <string name="articles_tab">Articles</string>
     <string name="donation_requests">Requests</string>
+    <string name="no_notification_text">You don\'t have any Notification\nPlease donate to save other people</string>
 </resources>

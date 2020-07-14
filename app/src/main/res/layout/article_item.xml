@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/article_item_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:elevation="5dp"
+    app:cardCornerRadius="20dp"
+    app:cardPreventCornerOverlap="true"
+    android:layout_marginBottom="16dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp">
+
+
+    <ImageView
+        android:id="@+id/article_item_img_background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        tools:src="@drawable/login_background_image" />
+
+    <TextView
+        android:id="@+id/article_item_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="bottom"
+        android:background="#C19B00EE"
+        android:gravity="center"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/white"
+        tools:text="test" />
+
+    <ImageView
+        android:id="@+id/article_item_img_add_to_favourite"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/favorite_icon_background"
+        android:cropToPadding="true"
+        android:padding="5dp"
+        android:src="@drawable/ic_favorite_border" />
+
+
+</androidx.cardview.widget.CardView>
