@@ -44,7 +44,6 @@ public class Utils {
             arr[0] = saver.getYear();
             arr[1] = saver.getMonth()-1;
             arr[2] = saver.getDay();
-            Toast.makeText(activity, "else  "+saver.getYear()+saver.getMonth()+saver.getDay() , Toast.LENGTH_SHORT).show();
         }
 
         DatePickerDialog dialog = new DatePickerDialog(activity,
