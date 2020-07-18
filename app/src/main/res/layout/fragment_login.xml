@@ -25,14 +25,14 @@
 
 
         <EditText
-            android:id="@+id/fragment_login_ed_edit_text_login_email"
+            android:id="@+id/fragment_login_ed_edit_text_login_phone"
             style="@style/TextThemeForBlackText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:background="@drawable/login_edit_text_shape"
-            android:hint="example@example.com"
-            android:inputType="textEmailAddress"
+            android:hint="your phone number"
+            android:inputType="phone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,11 +45,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:background="@drawable/login_edit_text_shape"
-            android:hint="123456"
+            android:hint="your password"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_login_ed_edit_text_login_email" />
+            app:layout_constraintTop_toBottomOf="@+id/fragment_login_ed_edit_text_login_phone" />
 
 
         <CheckBox

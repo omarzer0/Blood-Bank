@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.widget.DatePicker;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -12,6 +11,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.azapps.bloodbankipda3.R;
 import com.azapps.bloodbankipda3.data.CalenderSaver;
+import com.azapps.bloodbankipda3.helper.retrofitCalls.DataApi;
+import com.azapps.bloodbankipda3.helper.retrofitCalls.RetrofitClient;
 
 import java.util.Calendar;
 
@@ -63,4 +64,8 @@ public class Utils {
         return returnSaver;
     }
 
+    public static DataApi createRetrofit(){
+        DataApi dataApi = RetrofitClient.getClient().create(DataApi.class);
+        return dataApi;
+    }
 }
