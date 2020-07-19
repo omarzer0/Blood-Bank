@@ -3,7 +3,7 @@ package com.azapps.bloodbankipda3.data;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Data {
+public class SuccessfullyLoggedInData {
 
     @SerializedName("api_token")
     @Expose
