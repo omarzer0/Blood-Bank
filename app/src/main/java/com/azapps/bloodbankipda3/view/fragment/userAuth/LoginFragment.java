@@ -140,8 +140,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Log
                     Toast.makeText(getActivity(), "failed to connect to the server", Toast.LENGTH_SHORT).show();
                 } else {
                     // successfully fetched data>>> check if it is right
-                    getResponseStatus(response.body().getStatus(), response.body().getMsg()
-                            ,response.body().getSuccessfullyLoggedInData().getApiToken());
+                    getResponseStatus(response.body());
                 }
             }
 
@@ -152,14 +151,16 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Log
         });
     }
 
-    private void getResponseStatus(Integer status, String msg, String mApi_token) {
+    private void getResponseStatus(SuccessfullyLoggedInDataHolder dataHolder) {
+        int status = dataHolder.getStatus();
+        String msg = dataHolder.getMsg();
         if (status == 0) {
             Log.e(TAG, "getResponseStatus: error" );
             Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
         } else if (status == 1) {
             Log.e(TAG, "getResponseStatus: done" );
             Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
-            api_token = mApi_token;
+            api_token = dataHolder.getSuccessfullyLoggedInData().getApiToken();
             saveToPreferences();
             startActivity(new Intent(getActivity(), HomeActivity.class));
         } else {
