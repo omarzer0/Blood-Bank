@@ -89,6 +89,7 @@
             android:gravity="center_vertical"
             android:hint="Date of birth"
             android:nextFocusDown="@id/fragment_edit_profile_tv_text_view_blood_type_choice"
+            android:textDirection="ltr"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -123,6 +124,7 @@
             android:gravity="center_vertical"
             android:hint="The last blood donation"
             android:nextFocusDown="@id/fragment_edit_profile_tv_text_view_state_location"
+            android:textDirection="ltr"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -140,6 +142,7 @@
             android:gravity="center_vertical"
             android:hint="State"
             android:nextFocusDown="@id/fragment_edit_profile_tv_text_view_city_location"
+            android:textDirection="ltr"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -158,6 +161,7 @@
             android:gravity="center_vertical"
             android:hint="City"
             android:nextFocusDown="@id/fragment_edit_profile_ed_edit_text_phone"
+            android:textDirection="ltr"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -174,46 +178,11 @@
             android:drawablePadding="8dp"
             android:hint="phone"
             android:inputType="phone"
-            android:nextFocusDown="@id/fragment_edit_profile_ed_edit_text_password"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_edit_profile_tv_text_view_city_location" />
-
-
-        <EditText
-            android:id="@+id/fragment_edit_profile_ed_edit_text_password"
-            style="@style/TextThemeForBlackText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/profile_edit_text_shape"
-            android:drawableStart="@drawable/password_icon"
-            android:drawablePadding="8dp"
-            android:hint="password"
-            android:inputType="textPassword"
-            android:nextFocusDown="@id/fragment_edit_profile_ed_edit_test_confirm_password"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_edit_profile_ed_edit_text_phone" />
-
-        <EditText
-            android:id="@+id/fragment_edit_profile_ed_edit_test_confirm_password"
-            style="@style/TextThemeForBlackText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/profile_edit_text_shape"
-            android:drawableStart="@drawable/password_icon"
-            android:drawablePadding="8dp"
-            android:hint="Confirm password"
-            android:inputType="textPassword"
             android:nextFocusDown="@id/fragment_edit_profile_edit_profile_information_btn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_edit_profile_ed_edit_text_password" />
+            app:layout_constraintTop_toBottomOf="@+id/fragment_edit_profile_tv_text_view_city_location" />
 
 
         <Button
@@ -221,7 +190,7 @@
             style="@style/ButtonTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/home_button_shape"
             android:text="Edit"
@@ -231,7 +200,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_edit_profile_ed_edit_test_confirm_password"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_edit_profile_ed_edit_text_phone"
             app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

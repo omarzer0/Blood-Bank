@@ -31,13 +31,11 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
     // ui
     private TextView dateOfBirthTV, bloodTypeTV, lastDonationDateTV, stateTV, cityTV;
     private EditText nameET, emailET, phoneET, newPasswordET, confirmNewPasswordET;
-    private Button signUpBtn;
     // vars
     private CalenderSaver calenderSaverForDateOfBirth = null;
     private CalenderSaver calenderSaverForLastDonation = null;
     private String name, email, dateOfBirth, lastDonation, phone, newPassword, confirmNewPassword;
     private int state, city;
-    private DataApi dataApi;
 
     private int bloodTypeCheckedItem = -1;
     private String bloodTypeChoice;
@@ -71,7 +69,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
         newPasswordET = view.findViewById(R.id.fragment_sign_up_ed_edit_text_new_password);
         confirmNewPasswordET = view.findViewById(R.id.fragment_sign_up_ed_edit_test_confirm_new_password);
 
-        signUpBtn = view.findViewById(R.id.fragment_sign_up_btn_button_sign_up);
+        Button signUpBtn = view.findViewById(R.id.fragment_sign_up_btn_button_sign_up);
 
         // click listeners
         dateOfBirthTV.setOnClickListener(this);
@@ -110,7 +108,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
     }
 
     private void signUpWithRetrofit() {
-        dataApi = Utils.createRetrofit();
+        DataApi dataApi = Utils.createRetrofit();
         SignUpUser signUpUser = new SignUpUser(name, email, dateOfBirth, bloodTypeCheckedItem, lastDonation, 1, phone, newPassword, confirmNewPassword);
         getUserSignUpResultsFromRetrofit(dataApi, signUpUser);
     }
@@ -121,7 +119,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onResponse(Call<RetrofitCallStatus> call, Response<RetrofitCallStatus> response) {
                 if (!response.isSuccessful()) {
-                    // no internet
+                    // Server error
                     Toast.makeText(getActivity(), "failed to connect to the server", Toast.LENGTH_SHORT).show();
                 } else {
                     // successfully fetched data>>> check status if it is right
