@@ -31,10 +31,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.azapps.bloodbankipda3.helper.Constant.PREFS_LOGIN_FILE_NAME;
+import static com.azapps.bloodbankipda3.helper.Constant.PREF_API_TOKEN;
 import static com.azapps.bloodbankipda3.helper.Constant.PREF_LOGIN_CHECKBOX;
 
 public class LoginFragment extends Fragment implements View.OnClickListener, LoginActivity.OnBackPressedListener {
-    private static final String PREF_API_TOKEN = "api_token";
+
     // ui
     private TextView forgetPassword, signUp;
     private Button login;
