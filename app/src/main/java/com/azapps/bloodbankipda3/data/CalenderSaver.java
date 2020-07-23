@@ -4,11 +4,20 @@ public class CalenderSaver {
     private int year;
     private int month;
     private int day;
+    private String stDateOfBirth;
 
     public CalenderSaver(int year, int month, int day) {
         this.month = month;
         this.day = day;
         this.year = year;
+    }
+
+    public String getStDateOfBirth() {
+        return stDateOfBirth;
+    }
+
+    public void setStDateOfBirth(String stDateOfBirth) {
+        this.stDateOfBirth = stDateOfBirth;
     }
 
     public int getYear() {

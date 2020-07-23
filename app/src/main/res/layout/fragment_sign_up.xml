@@ -160,7 +160,7 @@
             android:drawablePadding="8dp"
             android:hint="phone"
             android:inputType="phone"
-            android:nextFocusDown="@id/fragment_sign_up_ed_edit_text_password"
+            android:nextFocusDown="@id/fragment_sign_up_ed_edit_text_new_password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -168,7 +168,7 @@
 
 
         <EditText
-            android:id="@+id/fragment_sign_up_ed_edit_text_password"
+            android:id="@+id/fragment_sign_up_ed_edit_text_new_password"
             style="@style/TextThemeForBlackText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -178,14 +178,14 @@
             android:drawablePadding="8dp"
             android:hint="password"
             android:inputType="textPassword"
-            android:nextFocusDown="@id/fragment_sign_up_ed_edit_test_confirm_password"
+            android:nextFocusDown="@id/fragment_sign_up_ed_edit_test_confirm_new_password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_ed_edit_text_phone" />
 
         <EditText
-            android:id="@+id/fragment_sign_up_ed_edit_test_confirm_password"
+            android:id="@+id/fragment_sign_up_ed_edit_test_confirm_new_password"
             style="@style/TextThemeForBlackText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -199,7 +199,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_ed_edit_text_password" />
+            app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_ed_edit_text_new_password" />
 
 
         <Button
@@ -217,7 +217,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_ed_edit_test_confirm_password"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_ed_edit_test_confirm_new_password"
             app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

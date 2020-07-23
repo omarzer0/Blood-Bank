@@ -52,11 +52,26 @@ public class Utils {
                 new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        String date = (month + 1) + "/" + dayOfMonth + "/" + year;
+                        String dateMonth = "";
+                        String dateDay = "";
+                        if (month+1 < 10){
+                            dateMonth = dateMonth.concat("0"+(month+1));
+                        }else {
+                            dateMonth = String.valueOf(month+1);
+                        }
+
+                        if (dayOfMonth < 10 ){
+                            dateDay = dateDay.concat("0"+(dayOfMonth));
+                        }else {
+                            dateDay = String.valueOf(dayOfMonth);
+                        }
+
+                        String date = year+ "-" + dateMonth +"-"+dateDay;
                         textView.setText(date);
                         returnSaver.setYear(year);
                         returnSaver.setMonth(month+1);
                         returnSaver.setDay(dayOfMonth);
+                        returnSaver.setStDateOfBirth(date);
                     }
                 }, arr[0], arr[1], arr[2]);
 

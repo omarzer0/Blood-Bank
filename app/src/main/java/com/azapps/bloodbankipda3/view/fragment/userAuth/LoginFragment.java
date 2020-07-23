@@ -19,7 +19,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.azapps.bloodbankipda3.R;
-import com.azapps.bloodbankipda3.data.SuccessfullyLoggedInDataHolder;
+import com.azapps.bloodbankipda3.data.RetrofitCallStatus;
 import com.azapps.bloodbankipda3.data.UserLoginDataBody;
 import com.azapps.bloodbankipda3.helper.Utils;
 import com.azapps.bloodbankipda3.helper.retrofitCalls.DataApi;
@@ -34,7 +34,6 @@ import static com.azapps.bloodbankipda3.helper.Constant.PREFS_LOGIN_FILE_NAME;
 import static com.azapps.bloodbankipda3.helper.Constant.PREF_LOGIN_CHECKBOX;
 
 public class LoginFragment extends Fragment implements View.OnClickListener, LoginActivity.OnBackPressedListener {
-    private static final String TAG = "LoginFragment";
     private static final String PREF_API_TOKEN = "api_token";
     // ui
     private TextView forgetPassword, signUp;
@@ -131,36 +130,34 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Log
     }
 
     private void getResultsFromRetrofit() {
-        Call<SuccessfullyLoggedInDataHolder> call = dataApi.getDataHolder(new UserLoginDataBody(phone, password));
-        call.enqueue(new Callback<SuccessfullyLoggedInDataHolder>() {
+        Call<RetrofitCallStatus> call = dataApi.getLoginDataResponse(new UserLoginDataBody(phone, password));
+        call.enqueue(new Callback<RetrofitCallStatus>() {
             @Override
-            public void onResponse(Call<SuccessfullyLoggedInDataHolder> call, Response<SuccessfullyLoggedInDataHolder> response) {
+            public void onResponse(Call<RetrofitCallStatus> call, Response<RetrofitCallStatus> response) {
                 if (!response.isSuccessful()) {
                     // no internet
                     Toast.makeText(getActivity(), "failed to connect to the server", Toast.LENGTH_SHORT).show();
                 } else {
-                    // successfully fetched data>>> check if it is right
+                    // successfully fetched data>>> check status if it is right
                     getResponseStatus(response.body());
                 }
             }
 
             @Override
-            public void onFailure(Call<SuccessfullyLoggedInDataHolder> call, Throwable t) {
+            public void onFailure(Call<RetrofitCallStatus> call, Throwable t) {
                 Toast.makeText(getActivity(), "check your network connection" + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void getResponseStatus(SuccessfullyLoggedInDataHolder dataHolder) {
+    private void getResponseStatus(RetrofitCallStatus dataHolder) {
         int status = dataHolder.getStatus();
         String msg = dataHolder.getMsg();
         if (status == 0) {
-            Log.e(TAG, "getResponseStatus: error" );
             Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
         } else if (status == 1) {
-            Log.e(TAG, "getResponseStatus: done" );
             Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
-            api_token = dataHolder.getSuccessfullyLoggedInData().getApiToken();
+            api_token = dataHolder.getData().getApiToken();
             saveToPreferences();
             startActivity(new Intent(getActivity(), HomeActivity.class));
         } else {
@@ -171,7 +168,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Log
     private void saveToPreferences() {
         SharedPreferences.Editor editor = getContext().getSharedPreferences(PREFS_LOGIN_FILE_NAME, Context.MODE_PRIVATE).edit();
         editor.putString(PREF_API_TOKEN, api_token);
-        Log.e(TAG, "saveToPreferences: "+api_token);
         editor.putBoolean(PREF_LOGIN_CHECKBOX, chkChecked);
         editor.apply();
     }

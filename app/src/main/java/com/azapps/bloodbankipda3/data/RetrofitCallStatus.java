@@ -3,7 +3,7 @@ package com.azapps.bloodbankipda3.data;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class SuccessfullyLoggedInDataHolder {
+public class RetrofitCallStatus {
 
     @SerializedName("status")
     @Expose
@@ -13,7 +13,7 @@ public class SuccessfullyLoggedInDataHolder {
     private String msg;
     @SerializedName("data")
     @Expose
-    private SuccessfullyLoggedInData successfullyLoggedInData;
+    private Data data;
 
     public Integer getStatus() {
         return status;
@@ -31,12 +31,12 @@ public class SuccessfullyLoggedInDataHolder {
         this.msg = msg;
     }
 
-    public SuccessfullyLoggedInData getSuccessfullyLoggedInData() {
-        return successfullyLoggedInData;
+    public Data getData() {
+        return data;
     }
 
-    public void setSuccessfullyLoggedInData(SuccessfullyLoggedInData successfullyLoggedInData) {
-        this.successfullyLoggedInData = successfullyLoggedInData;
+    public void setData(Data data) {
+        this.data = data;
     }
 
 }
