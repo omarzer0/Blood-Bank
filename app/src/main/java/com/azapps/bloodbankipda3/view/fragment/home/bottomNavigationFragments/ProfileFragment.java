@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment;
 
 import com.azapps.bloodbankipda3.R;
 import com.azapps.bloodbankipda3.data.Client;
-import com.azapps.bloodbankipda3.data.RetrofitCallStatus;
+import com.azapps.bloodbankipda3.data.RetrofitClientDataStatus;
 import com.azapps.bloodbankipda3.helper.Utils;
 import com.azapps.bloodbankipda3.helper.retrofitCalls.DataApi;
 
@@ -78,10 +78,10 @@ public class ProfileFragment extends Fragment {
 
     private void getProfileDataFromRetrofit(String api_token) {
         DataApi dataApi = Utils.createRetrofit();
-        Call<RetrofitCallStatus> call = dataApi.getUserProfileData("Xp2fERl2yEMCSIusVjdqH6EjU51jd1s5cwi93Xy2dDqNFZBJ3Mu4JJFwJeVU");
-        call.enqueue(new Callback<RetrofitCallStatus>() {
+        Call<RetrofitClientDataStatus> call = dataApi.getUserProfileData("Xp2fERl2yEMCSIusVjdqH6EjU51jd1s5cwi93Xy2dDqNFZBJ3Mu4JJFwJeVU");
+        call.enqueue(new Callback<RetrofitClientDataStatus>() {
             @Override
-            public void onResponse(Call<RetrofitCallStatus> call, Response<RetrofitCallStatus> response) {
+            public void onResponse(Call<RetrofitClientDataStatus> call, Response<RetrofitClientDataStatus> response) {
                 if (!response.isSuccessful()) {
                     // Server error
                     Toast.makeText(getActivity(), "failed to connect to the server", Toast.LENGTH_SHORT).show();
@@ -92,19 +92,19 @@ public class ProfileFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<RetrofitCallStatus> call, Throwable t) {
+            public void onFailure(Call<RetrofitClientDataStatus> call, Throwable t) {
                 Toast.makeText(getActivity(), "check your network connection", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void checkForComingDataStatus(RetrofitCallStatus body) {
+    private void checkForComingDataStatus(RetrofitClientDataStatus body) {
         int status = body.getStatus();
         String msg = body.getMsg();
         if (status == 0) {
             Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
         } else if (status == 1) {
-            Client client = body.getData().getClient();
+            Client client = body.getClientData().getClient();
             setProfileClientDataToVariables(client);
         }
     }
@@ -126,7 +126,7 @@ public class ProfileFragment extends Fragment {
         dateOfBirth = client.getBirthDate();
         bloodTypeChoice = client.getBloodType().getName();
         lastDonation = client.getDonationLastDate();
-        stateName = client.getBloodType().getName();
+        stateName = client.getCity().getGovernorate().getName();
         cityName = client.getCity().getName();
         phone = client.getPhone();
         // pref------------------------------------------

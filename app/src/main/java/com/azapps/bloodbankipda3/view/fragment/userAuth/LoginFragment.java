@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.azapps.bloodbankipda3.R;
-import com.azapps.bloodbankipda3.data.RetrofitCallStatus;
+import com.azapps.bloodbankipda3.data.RetrofitClientDataStatus;
 import com.azapps.bloodbankipda3.data.UserLoginDataBody;
 import com.azapps.bloodbankipda3.helper.Utils;
 import com.azapps.bloodbankipda3.helper.retrofitCalls.DataApi;
@@ -131,10 +130,10 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Log
     }
 
     private void getResultsFromRetrofit() {
-        Call<RetrofitCallStatus> call = dataApi.getLoginDataResponse(new UserLoginDataBody(phone, password));
-        call.enqueue(new Callback<RetrofitCallStatus>() {
+        Call<RetrofitClientDataStatus> call = dataApi.getLoginDataResponse(new UserLoginDataBody(phone, password));
+        call.enqueue(new Callback<RetrofitClientDataStatus>() {
             @Override
-            public void onResponse(Call<RetrofitCallStatus> call, Response<RetrofitCallStatus> response) {
+            public void onResponse(Call<RetrofitClientDataStatus> call, Response<RetrofitClientDataStatus> response) {
                 if (!response.isSuccessful()) {
                     // no internet
                     Toast.makeText(getActivity(), "failed to connect to the server", Toast.LENGTH_SHORT).show();
@@ -145,20 +144,20 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Log
             }
 
             @Override
-            public void onFailure(Call<RetrofitCallStatus> call, Throwable t) {
+            public void onFailure(Call<RetrofitClientDataStatus> call, Throwable t) {
                 Toast.makeText(getActivity(), "check your network connection" + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void getResponseStatus(RetrofitCallStatus dataHolder) {
+    private void getResponseStatus(RetrofitClientDataStatus dataHolder) {
         int status = dataHolder.getStatus();
         String msg = dataHolder.getMsg();
         if (status == 0) {
             Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
         } else if (status == 1) {
             Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
-            api_token = dataHolder.getData().getApiToken();
+            api_token = dataHolder.getClientData().getApiToken();
             saveToPreferences();
             startActivity(new Intent(getActivity(), HomeActivity.class));
         } else {

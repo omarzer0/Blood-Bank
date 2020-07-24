@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 
 import com.azapps.bloodbankipda3.R;
 import com.azapps.bloodbankipda3.data.CalenderSaver;
-import com.azapps.bloodbankipda3.data.RetrofitCallStatus;
+import com.azapps.bloodbankipda3.data.RetrofitClientDataStatus;
 import com.azapps.bloodbankipda3.data.SignUpUser;
 import com.azapps.bloodbankipda3.helper.Utils;
 import com.azapps.bloodbankipda3.helper.retrofitCalls.DataApi;
@@ -114,10 +114,10 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
     }
 
     private void getUserSignUpResultsFromRetrofit(DataApi api, SignUpUser user) {
-        Call<RetrofitCallStatus> call = api.getSignUpDataResponse(user);
-        call.enqueue(new Callback<RetrofitCallStatus>() {
+        Call<RetrofitClientDataStatus> call = api.getSignUpDataResponse(user);
+        call.enqueue(new Callback<RetrofitClientDataStatus>() {
             @Override
-            public void onResponse(Call<RetrofitCallStatus> call, Response<RetrofitCallStatus> response) {
+            public void onResponse(Call<RetrofitClientDataStatus> call, Response<RetrofitClientDataStatus> response) {
                 if (!response.isSuccessful()) {
                     // Server error
                     Toast.makeText(getActivity(), "failed to connect to the server", Toast.LENGTH_SHORT).show();
@@ -138,7 +138,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
             }
 
             @Override
-            public void onFailure(Call<RetrofitCallStatus> call, Throwable t) {
+            public void onFailure(Call<RetrofitClientDataStatus> call, Throwable t) {
                 Toast.makeText(getActivity(), "check your network connection", Toast.LENGTH_SHORT).show();
             }
         });

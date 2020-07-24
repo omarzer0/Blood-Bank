@@ -34,13 +34,14 @@
 
     <ImageView
         android:id="@+id/fragment_notification_img_no_notification_image"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:scaleType="fitXY"
         android:src="@drawable/no_notification"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginRight="46dp"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
