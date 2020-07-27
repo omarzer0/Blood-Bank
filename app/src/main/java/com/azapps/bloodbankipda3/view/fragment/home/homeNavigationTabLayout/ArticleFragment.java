@@ -1,10 +1,12 @@
 package com.azapps.bloodbankipda3.view.fragment.home.homeNavigationTabLayout;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,6 +22,7 @@ import com.azapps.bloodbankipda3.data.Article;
 import com.azapps.bloodbankipda3.data.RetrofitArticleDataStatus;
 import com.azapps.bloodbankipda3.helper.Utils;
 import com.azapps.bloodbankipda3.helper.retrofitCalls.DataApi;
+import com.azapps.bloodbankipda3.view.activity.home.article.ArticleDetails;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -29,6 +32,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static android.content.Context.MODE_PRIVATE;
+import static com.azapps.bloodbankipda3.helper.Constant.ARTICLE_BACKGROUND_IMAGE_EXTRA;
+import static com.azapps.bloodbankipda3.helper.Constant.ARTICLE_BUNDLE_EXTRA;
+import static com.azapps.bloodbankipda3.helper.Constant.ARTICLE_CONTENT_EXTRA;
+import static com.azapps.bloodbankipda3.helper.Constant.ARTICLE_FAVOURITE_IMAGE_EXTRA;
+import static com.azapps.bloodbankipda3.helper.Constant.ARTICLE_TITLE_EXTRA;
 import static com.azapps.bloodbankipda3.helper.Constant.PREFS_LOGIN_FILE_NAME;
 import static com.azapps.bloodbankipda3.helper.Constant.PREF_API_TOKEN;
 
@@ -110,6 +118,15 @@ public class ArticleFragment extends Fragment implements OnArticleClickListener 
 
     @Override
     public void onArticleClick(int position) {
-        Toast.makeText(getActivity(), articles.get(position).getTitle(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getActivity(), ArticleDetails.class);
+        Bundle bundle = new Bundle();
+        bundle.putString(ARTICLE_TITLE_EXTRA,articles.get(position).getTitle());
+        bundle.putString(ARTICLE_CONTENT_EXTRA,articles.get(position).getContent());
+        bundle.putString(ARTICLE_BACKGROUND_IMAGE_EXTRA,articles.get(position).getThumbnailFullPath());
+        bundle.putBoolean(ARTICLE_FAVOURITE_IMAGE_EXTRA,articles.get(position).getIsFavourite());
+
+        intent.putExtra(ARTICLE_BUNDLE_EXTRA, bundle);
+        startActivity(intent);
+        getActivity().overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 }

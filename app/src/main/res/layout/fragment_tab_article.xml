@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#eae6ed">
+    android:background="#ffffff">
 
     <EditText
         android:id="@+id/fragment_rab_article_ed_search_box"
