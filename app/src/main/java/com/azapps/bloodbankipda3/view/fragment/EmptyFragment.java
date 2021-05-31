@@ -6,12 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.azapps.bloodbankipda3.R;
 
-public class EmptyFragment extends BaseFragment {
-    public EmptyFragment(){
-
+public class EmptyFragment extends Fragment {
+    public EmptyFragment() {
+        // use newInstance Instead
     }
 
     @Override
@@ -25,9 +26,14 @@ public class EmptyFragment extends BaseFragment {
         return inflater.inflate(R.layout.fragment_empty, container, false);
     }
 
-    @Override
-    public void onBackFragment() {
-        // do your action
-        super.onBackFragment();
+    // TODO: Rename and change types and number of parameters
+    public static EmptyFragment newInstance() {
+        EmptyFragment fragment = new EmptyFragment();
+//        Bundle args = new Bundle();
+//        args.putString(ARG_PARAM1, param1);
+//        args.putString(ARG_PARAM2, param2);
+//        fragment.setArguments(args);
+        return fragment;
     }
+
 }

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background_image"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/fragment_sign_up_tv_text_view_new_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Create new account"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/fragment_sign_up_ed_edit_text_name"
+            style="@style/TextThemeForBlackText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/login_edit_text_shape"
+            android:drawableStart="@drawable/name_icon"
+            android:drawablePadding="8dp"
+            android:focusable="true"
+            android:hint="name"
+            android:inputType="text"
+            android:nextFocusDown="@id/fragment_sign_up_ed_edit_text_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_tv_text_view_new_account" />
+
+
+        <EditText
+            android:id="@+id/fragment_sign_up_ed_edit_text_email"
+            style="@style/TextThemeForBlackText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/login_edit_text_shape"
+            android:drawableStart="@drawable/email_icon"
+            android:drawablePadding="8dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:nextFocusDown="@id/fragment_sign_up_tv_text_view_date_of_birth"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_ed_edit_text_name" />
+
+        <TextView
+            android:id="@+id/fragment_sign_up_tv_text_view_date_of_birth"
+            style="@style/TextThemeForBlackText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/login_edit_text_shape"
+            android:drawableStart="@drawable/date_of_birth_icon"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="Date of birth"
+            android:nextFocusDown="@id/fragment_sign_up_tv_text_view_blood_type_choice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_ed_edit_text_email" />
+
+        <TextView
+            android:id="@+id/fragment_sign_up_tv_text_view_blood_type_choice"
+            style="@style/TextThemeForBlackText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/login_edit_text_shape"
+            android:drawableStart="@drawable/blood_drop_icon"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="blood type"
+            android:nextFocusDown="@id/fragment_sign_up_tv_text_view_last_blood_donation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_tv_text_view_date_of_birth" />
+
+        <TextView
+            android:id="@+id/fragment_sign_up_tv_text_view_last_blood_donation"
+            style="@style/TextThemeForBlackText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/login_edit_text_shape"
+            android:drawableStart="@drawable/date_of_birth_icon"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="The last blood donation"
+            android:nextFocusDown="@id/fragment_sign_up_tv_text_view_blood_type_choice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_tv_text_view_blood_type_choice" />
+
+        <TextView
+            android:id="@+id/fragment_sign_up_tv_text_view_state_location"
+            style="@style/TextThemeForBlackText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/login_edit_text_shape"
+            android:drawableStart="@drawable/drop_down_arrow_icon"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="State"
+            android:nextFocusDown="@id/fragment_sign_up_tv_text_view_blood_type_choice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_tv_text_view_last_blood_donation" />
+
+
+        <TextView
+            android:id="@+id/fragment_sign_up_tv_text_view_city_location"
+            style="@style/TextThemeForBlackText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/login_edit_text_shape"
+            android:drawableStart="@drawable/drop_down_arrow_icon"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="City"
+            android:nextFocusDown="@id/fragment_sign_up_tv_text_view_blood_type_choice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_tv_text_view_state_location" />
+
+        <EditText
+            android:id="@+id/fragment_sign_up_ed_edit_text_phone"
+            style="@style/TextThemeForBlackText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/login_edit_text_shape"
+            android:drawableStart="@drawable/phone_icon"
+            android:drawablePadding="8dp"
+            android:hint="phone"
+            android:inputType="phone"
+            android:nextFocusDown="@id/fragment_sign_up_ed_edit_text_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_tv_text_view_city_location" />
+
+
+        <EditText
+            android:id="@+id/fragment_sign_up_ed_edit_text_password"
+            style="@style/TextThemeForBlackText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/login_edit_text_shape"
+            android:drawableStart="@drawable/password_icon"
+            android:drawablePadding="8dp"
+            android:hint="password"
+            android:inputType="textPassword"
+            android:nextFocusDown="@id/fragment_sign_up_ed_edit_test_confirm_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_ed_edit_text_phone" />
+
+        <EditText
+            android:id="@+id/fragment_sign_up_ed_edit_test_confirm_password"
+            style="@style/TextThemeForBlackText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/login_edit_text_shape"
+            android:drawableStart="@drawable/password_icon"
+            android:drawablePadding="8dp"
+            android:hint="Confirm password"
+            android:inputType="textPassword"
+            android:nextFocusDown="@id/fragment_sign_up_btn_button_sign_up"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_ed_edit_text_password" />
+
+
+        <Button
+            android:id="@+id/fragment_sign_up_btn_button_sign_up"
+            style="@style/ButtonTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/login_button_shape"
+            android:text="Sign up"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_sign_up_ed_edit_test_confirm_password"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
